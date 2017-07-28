@@ -5,6 +5,7 @@ import com.example.android.friendlist_mahasiswa_its.model.Value;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 /**
@@ -18,4 +19,7 @@ public interface RegisterAPI {
                       @Field("nama")String nama,
                       @Field("jurusan")String jurusan,
                       @Field("jenis_kelamin")String jenis_kelamin);
+
+    @GET("view.php")
+    Call<Value>view();
 }
