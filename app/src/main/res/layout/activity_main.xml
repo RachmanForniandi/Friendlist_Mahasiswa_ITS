@@ -55,8 +55,8 @@
 
         <RadioGroup
             android:id="@+id/radio_JenisKelamin"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <RadioButton
                 android:id="@+id/Laki_laki"
@@ -73,13 +73,13 @@
 
         <Button
             android:id="@+id/btn_Daftar"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Daftar" />
 
         <Button
             android:id="@+id/btn_Lihat"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Lihat" />
 

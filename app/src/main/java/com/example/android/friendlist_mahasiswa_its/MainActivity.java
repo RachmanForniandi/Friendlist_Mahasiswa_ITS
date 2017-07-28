@@ -21,7 +21,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String URL = "";
+    public static final String URL = "http://192.168.1.13/crud_android2/";
     private RadioButton radioJK_Btn;
     private ProgressDialog progress;
     String nrp,nama,jurusan;
@@ -31,9 +31,10 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.et_Nama)EditText editTextNama;
     @BindView(R.id.et_Jurusan)EditText editTextJurusan;
 
-    @OnClick(R.id.btn_Daftar)void daftar(){
+    @OnClick(com.example.android.friendlist_mahasiswa_its.R.id.btn_Daftar) void daftar(){
+
         //utk menampilkan progress dialog
-        progress =new ProgressDialog(this);
+        progress = new ProgressDialog(this);
         progress.setCancelable(false);
         progress.setMessage("Loading ...");
         progress.show();
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         jurusan = editTextJurusan.getText().toString();
 
         int selectedId = radioGroup.getCheckedRadioButtonId();
+
         radioJK_Btn = (RadioButton)findViewById(selectedId);
         String jenis_kelamin = radioJK_Btn.getText().toString();
 
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Value> call, Throwable t) {
-                t.getStackTrace();
+                t.printStackTrace();
                 progress.dismiss();
                 Toast.makeText(MainActivity.this,"Jaringan sedang error!",Toast.LENGTH_SHORT).show();
             }
