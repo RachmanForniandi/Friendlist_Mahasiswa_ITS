@@ -53,6 +53,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+
         @BindView(R.id.txtNRP)TextView textViewNRP;
         @BindView(R.id.txtNama)TextView textViewNama;
         @BindView(R.id.txtJurusan)TextView textViewJurusan;

@@ -21,5 +21,10 @@ public interface RegisterAPI {
                       @Field("jenis_kelamin")String jenis_kelamin);
 
     @GET("view.php")
-    Call<Value>view();
+    Call<Value> view();
+
+    @FormUrlEncoded
+    @POST("search.php")
+    Call<Value> daftar(@Field("search")String search);
+
 }

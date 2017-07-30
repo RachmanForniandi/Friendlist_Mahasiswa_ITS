@@ -25,6 +25,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ViewActivity extends AppCompatActivity {
+
     public static final String URL ="http://192.168.1.13/crud_android2/";
     private List<Mahasiswa> mahasiswa = new ArrayList<>();
     private RecyclerViewAdapter viewAdapter;
@@ -42,7 +43,17 @@ public class ViewActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(viewAdapter);
+
+        loadDataMahasiwa();
     }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        loadDataMahasiwa();
+    }
+
+
     private void loadDataMahasiwa(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL)

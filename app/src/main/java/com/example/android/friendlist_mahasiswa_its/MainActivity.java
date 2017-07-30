@@ -1,6 +1,7 @@
 package com.example.android.friendlist_mahasiswa_its;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -26,11 +27,10 @@ public class MainActivity extends AppCompatActivity {
     private ProgressDialog progress;
     String nrp,nama,jurusan;
 
-    @BindView(R.id.radio_JenisKelamin) RadioGroup radioGroup;
     @BindView(R.id.et_NRP) EditText editTextNRP;
     @BindView(R.id.et_Nama)EditText editTextNama;
     @BindView(R.id.et_Jurusan)EditText editTextJurusan;
-
+    @BindView(R.id.radio_JenisKelamin) RadioGroup radioGroup;
     @OnClick(com.example.android.friendlist_mahasiswa_its.R.id.btn_Daftar) void daftar(){
 
         //utk menampilkan progress dialog
@@ -77,7 +77,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"Jaringan sedang error!",Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
+    @OnClick(R.id.btn_Lihat)void lihat(){
+        Intent pindah = new Intent(MainActivity.this, ViewActivity.class);
+        startActivity(pindah);
     }
 
     @Override
