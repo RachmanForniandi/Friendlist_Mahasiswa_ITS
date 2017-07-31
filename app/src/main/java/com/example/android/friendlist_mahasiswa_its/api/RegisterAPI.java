@@ -25,6 +25,6 @@ public interface RegisterAPI {
 
     @FormUrlEncoded
     @POST("search.php")
-    Call<Value> daftar(@Field("search")String search);
+    Call<Value> search(@Field("search")String search);
 
 }
