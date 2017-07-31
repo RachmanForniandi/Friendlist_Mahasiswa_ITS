@@ -27,4 +27,11 @@ public interface RegisterAPI {
     @POST("search.php")
     Call<Value> search(@Field("search")String search);
 
+    @FormUrlEncoded
+    @POST("update.php")
+    Call<Value> update(@Field("nrp")String nrp,
+                       @Field("nama")String nama,
+                       @Field("jurusan")String jurusan,
+                       @Field("jenis_kelamin")String jenis_kelamin);
+
 }
