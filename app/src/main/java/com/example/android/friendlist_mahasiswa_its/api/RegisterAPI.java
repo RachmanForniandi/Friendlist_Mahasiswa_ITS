@@ -28,6 +28,10 @@ public interface RegisterAPI {
     Call<Value> search(@Field("search")String search);
 
     @FormUrlEncoded
+    @POST("delete.php")
+    Call<Value> hapus(@Field("nrp")String nrp);
+
+    @FormUrlEncoded
     @POST("update.php")
     Call<Value> update(@Field("nrp")String nrp,
                        @Field("nama")String nama,

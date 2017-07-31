@@ -1,6 +1,7 @@
 package com.example.android.friendlist_mahasiswa_its.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.android.friendlist_mahasiswa_its.R;
+import com.example.android.friendlist_mahasiswa_its.UpdateActivity;
 import com.example.android.friendlist_mahasiswa_its.model.Mahasiswa;
 
 import java.util.List;
@@ -67,6 +69,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         @Override
         public void onClick(View view) {
+            String nrp = textViewNRP.getText().toString();
+            String nama = textViewNama.getText().toString();
+            String jurusan = textViewJurusan.getText().toString();
+            String jenis_kelamin = textViewJenisKelamin.getText().toString();
+
+            Intent intent = new Intent(context, UpdateActivity.class);
+            intent.putExtra("nrp", nrp);
+            intent.putExtra("nama", nama);
+            intent.putExtra("jurusan", jurusan);
+            intent.putExtra("jenis_kelamin", jenis_kelamin);
+            context.startActivity(intent);
 
         }
     }
